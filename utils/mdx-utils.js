@@ -32,11 +32,11 @@ export const getPosts = () => {
       data,
       filePath,
     };
-  });
+  }).filter(post => post.data.on_homepage !== false);
 
   posts = sortPostsByDate(posts);
 
-  return posts;
+  return posts; 
 };
 
 export const getPostBySlug = async (slug) => {
